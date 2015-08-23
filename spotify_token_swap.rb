@@ -114,4 +114,11 @@ post '/refresh' do
 end
 
 
+get '/albums.json' do
+    content_type :json
+    file = File.read('album-data.json')
+    return JSON.parse(file).to_json
+    # return {:joe => 'test'}.to_json
+end
+
 
